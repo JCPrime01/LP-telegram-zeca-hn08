@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilhete Liberado - Zeca</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #25d366;
+            --text-white: #ffffff;
+            --border-green: #3ae676;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* Fundo da página totalmente preto */
+            background-color: #000;
+            font-family: 'Sora', sans-serif;
+            color: var(--text-white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 380px;
+            width: 90%;
+            /* Imagem de fundo do estádio APENAS dentro do card */
+            background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("https://grupogratuito.website/wp-content/uploads/2025/04/rugby-sport-environment-filed.png");
+            background-size: cover;
+            background-position: center;
+            border: 1px solid rgba(58, 230, 118, 0.4);
+            border-radius: 25px;
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 50px rgba(37, 211, 102, 0.05);
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        /* Borda de brilho superior */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-green), transparent);
+            z-index: 2;
+        }
+
+        /* Animação de flutuação para a imagem do Zeca */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .profile-img-container {
+            position: relative;
+            margin-bottom: 20px;
+            display: inline-block;
+            z-index: 1;
+        }
+
+        /* Brilho verde atrás do Zeca */
+        .profile-img-container::after {
+            content: '';
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(37, 211, 102, 0.5) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        .profile-img {
+            width: 240px;
+            height: auto;
+            animation: float 4s ease-in-out infinite;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h6 {
+            font-size: 15px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #f0f0f0;
+            position: relative;
+            z-index: 1;
+        }
+
+        h6 span {
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #3ae676;
+            color: #000;
+            text-decoration: none;
+            padding: 15px 0;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 18px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            width: 100%;
+            max-width: 280px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        .responsibility-img {
+            width: 200px;
+            margin-top: 30px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Ajustes para Mobile */
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 15px;
+            }
+            h2 {
+                font-size: 22px;
+            }
+            .profile-img {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Zeca com animação -->
+        <div class="profile-img-container">
+            <img src="https://grupogratuito.website/wp-content/uploads/2026/03/3-1024x1024.png" alt="Zeca" class="profile-img">
+        </div>
+
+        <h2>Bilhete Liberado<br>no Whatsapp</h2>
+
+        <h6>Clique no botão e fale comigo no <span>WhatsApp !</span> 👇🏻</h6>
+
+        <!-- Botão -->
+        <a href="https://mais.red/run/eaizeca" class="btn-whatsapp">PEGAR BILHETE</a>
+
+        <!-- Selo de Responsabilidade -->
+        <img src="https://grupogratuito.website/wp-content/uploads/2025/01/JOGUE-COM-RESPONSABILIDADE-300x42-1.webp" alt="Jogue com responsabilidade" class="responsibility-img">
+    </div>
+
+    <footer>
+        Copyright © 2025 – Todos os direitos reservados
+    </footer>
+
+</body>
+</html>
