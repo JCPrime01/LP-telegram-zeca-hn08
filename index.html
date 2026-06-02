@@ -39,8 +39,13 @@
     document.querySelectorAll("[data-trackpanel]").forEach(function(el){
       var q=new URLSearchParams(getUtms()).toString();
       el.href=R+(q?"?"+q:"");
-      el.addEventListener("click",function(){
-        if(typeof fbq!=="undefined") fbq('track','CompleteRegistration');
+      el.addEventListener("click",function(e){
+        e.preventDefault();
+        var dest=el.href;
+        if(typeof fbq!=="undefined"){
+          fbq('track','CompleteRegistration');
+        }
+        setTimeout(function(){ window.location.href=dest; }, 350);
       },true);
     });
   }
